@@ -14,23 +14,23 @@
  *= require_self
  */
 
- body {
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- }
+}
 
- button {
+button {
   padding: 0.5em;
-  background-color: #007FFF;
+  background-color: #007fff;
   border-style: none;
   color: white;
   border-radius: 0.25em;
- }
+}
 
- .recipe-card {
-  border: 1px solid #007FFF;
+.recipe-card {
+  border: 1px solid #007fff;
   border-radius: 0.25em;
   padding: 1.5em;
   margin: 1em;
@@ -39,9 +39,8 @@
   display: flex;
   justify-content: space-evenly;
   box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
- }
+}
 
- .recipe-card > div {
+.recipe-card > div {
   width: 40%;
- }
-
+}
