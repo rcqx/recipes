@@ -1,0 +1,77 @@
+body {
+  background: #fafafa;
+  font-family: Roboto, sans-serif;
+}
+
+.page_container {
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+
+  &.show_menu {
+    .main_page {
+      width: 75%;
+      flex-grow: 1;
+    }
+
+    .main_menu {
+      width: 25%;
+      max-width: 250px;
+      background: #f3f3f3;
+      border-right: 1px solid #e5e5e5;
+    }
+  }
+
+  .main_nav,
+  .account_nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    margin: 50px 0;
+
+    .menu_title {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 500;
+      color: #afafaf;
+      padding-bottom: 10px;
+    }
+
+    .menu_items {
+      display: flex;
+      flex-direction: column;
+
+      .menu_item {
+        text-decoration: none;
+        cursor: pointer;
+        color: #8d8d8d;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-right: 3px solid transparent;
+        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+
+        .menu_item_text {
+          transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+        }
+
+        &:hover {
+          color: #2ec76d;
+          border-right-color: #2ec76d;
+
+          .menu_item_text {
+            transform: translateX(5px);
+          }
+        }
+
+        &.active {
+          color: #2ec76d;
+          border-right-color: #2ec76d;
+        }
+      }
+    }
+  }
+}
