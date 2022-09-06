@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
   include ApplicationHelper
 
   def index
-    @foods = current_user.foods
+    @food = Food.all
   end
 
   def new
@@ -12,7 +12,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    new_food = current_user.foods.new(food_params)
+    new_food = Food.new(food_params)
     if new_food.save
       flash[:success] = 'You successfully added a food item'
       redirect_to foods_url
