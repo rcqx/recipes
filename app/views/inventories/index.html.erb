@@ -1,3 +1,7 @@
 <% @inventories.each do |inventory| %>
-  <%= inventory.name %>
-<% end %>
+  <%= link_to inventory_path(inventory.id) do %>
+    <%= inventory.name %><br><br>
+    
+  <% end %>
+<%end%>
+
