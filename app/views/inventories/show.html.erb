@@ -1,0 +1,8 @@
+<div class="inventory-container">
+  <%= @inventory.name %><br><br>
+  <%# <% if can? :destroy, @post %> %>
+    <%= button_to "Delete Post", inventory_path(@inventory.id), method: :delete %>
+  <%# <% end %> %>
+</div>
+
+
