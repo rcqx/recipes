@@ -3,11 +3,17 @@ class InventoriesController < ApplicationController
 
   def create; end
 
-  def destroy; end
+  def destroy
+    @inventory = Inventory.find(params[:id])
+    @inventory.destroy
+    redirect_to inventory_path
+  end
 
   def index
     @inventories = Inventory.all
   end
 
-  def show; end
+  def show
+    @inventory = Inventory.find(params[:id])
+  end
 end

@@ -1,2 +1,8 @@
-<h1>Inventories#show</h1>
-<p>Find me in app/views/inventories/show.html.erb</p>
+<div class="inventory-container">
+  <%= @inventory.name %><br><br>
+  <%# <% if can? :destroy, @post %> %>
+    <%= button_to "Delete Post", inventory_path(@inventory.id), method: :delete %>
+  <%# <% end %> %>
+</div>
+
+
