@@ -1,12 +1,14 @@
 class FoodsController < ApplicationController
-  # load_and_authorize_resource
+  before_action :authenticate_user!
+  include ApplicationHelper
 
   def index
     @foods = current_user.foods
   end
 
   def new
-    render :new
+    # render :new
+    @food = Food.new
   end
 
   def create
@@ -25,6 +27,6 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:add_food).permit(:name, :measurement_unit, :price)
+    params.require(:add_food).permit(:name, :measurement_unit, :price, :quantity)
   end
 end

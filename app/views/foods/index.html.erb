@@ -1,10 +1,11 @@
-<%= button_to 'Add Food', new_food_url %>
+<%= link_to 'Add Food', new_food_path, data: {turbo: false} %>
 
 <table>
   <tr>
     <th>Food</th>
     <th>Measurement Unit</th>
     <th>Unit Price</th>
+    <th>quantity</th>
     <th>Actions</th>
   </tr>
   <% @foods.each do |food| %>
@@ -12,6 +13,7 @@
       <td><%= food.name %></td>
       <td><%= food.measurement_unit %></td>
       <td><%= food.price %></td>
+      <td><%= food.quantity %></td>
       <td><%= link_to 'Delete', food_url(food) %></td>
     </tr>
   <% end %>
