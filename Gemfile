@@ -5,6 +5,7 @@ ruby '3.1.2'
 
 gem 'devise'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'sass-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
