@@ -1,2 +1,19 @@
-<h1>Foods#new</h1>
-<p>Find me in app/views/foods/new.html.erb</p>
+<%= form_with url: foods_path, method: :post, local: true, scope: :add_food do |form| %>
+
+<div>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+</div>
+
+<div>
+  <%= form.label :measurement_unit %><br>
+  <%= form.text_field :measurement_unit, size: "80x6" %>
+</div>
+
+<div>
+  <%= form.label :price %><br>
+  <%= form.text_field :price, size: "80x6" %>
+</div>
+
+<%= form.submit 'Save Food' %>
+<% end %>
