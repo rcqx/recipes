@@ -1,0 +1,12 @@
+<% @recipes.each do |item|  %>
+  <div class="recipe-card">
+    <div class="title">
+      <h2><%= item.name %></h2>
+      <%= button_to 'REMOVE', recipe_path(item.id), method: :delete, data: {turbo: false} %>      
+    </div>
+    <div class="description">
+      <h4>Description:</h4>
+      <p><%= item.description %></p>
+    </div>
+  </div>
+<% end %>
