@@ -1,11 +1,16 @@
   <div class="recipe-details">
     <div class="title">
-      <h1><%= @recipe.name%></h1>
-      <h3>Preparation time: <%= @recipe.preparation_time %></h3>
-      <h3>Cooking time: <%= @recipe.cooking_time %></h3>
-      <h3>Description:<br>
-        <h5><%= @recipe.description %></h5>
-      </h3>
+      <div>
+        <h1><%= @recipe.name%></h1>
+        <h3>Preparation time: <%= @recipe.preparation_time %></h3>
+        <h3>Cooking time: <%= @recipe.cooking_time %></h3>
+        <h3>Description:<br>
+          <h5><%= @recipe.description %></h5>
+        </h3>
+      </div>
+      <div class="toogle">
+      <%= button_to 'Public?', recipe_path, method: :put, class: 'public-btn' %> 
+      </div>
     </div>
     <div class="buttonsCont">
       <button>Generate Shopping List</button>

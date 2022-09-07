@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root "users#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :foods, only: [:index, :show, :new, :create, :destroy]
+  resources :foods, only: [:index, :show, :new, :create, :destroy, :update]
   resources :inventories, only: [:index, :show, :new, :create, :destroy]
-  resources :recipes, only: [:new, :create, :destroy, :index, :show]
+  resources :recipes, only: [:new, :create, :destroy, :index, :show, :update]
   resources :users, only: [:new, :create, :destroy, :index, :show]
 end
