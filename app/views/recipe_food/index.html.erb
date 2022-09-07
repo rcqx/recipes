@@ -1,0 +1,20 @@
+<table class="recipe-list">
+ <tr>
+      <td align="center">Food</td>
+      <td align="center">Quantity</td>
+      <td align="center">Value</td>
+      <td align="center">Actions</td>
+    </tr> 
+
+    <% @recipe.recipe_foods.each do |item| %>
+    <tr>
+      <td align="center"><h5><%= item.food.name %></h5></td>
+      <td align="center"><h5><%= item.quantity %></h5></td>
+      <td align="center"><h5><%= item.quantity * item.food.price %></h5></td>
+      <td align="center"><button>MODIFY</button>   <button>REMOVE</button></td>
+    <tr>
+    <% end %>  
+</table>
+
+
+
