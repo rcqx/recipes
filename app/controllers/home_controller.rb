@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
   def read
     p '==============================000'
-    authorize! :read, current_user
+    authorize! :read, 
   end
 
   def shopping_list
