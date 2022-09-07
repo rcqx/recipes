@@ -1,8 +1,19 @@
-<div class="inventory-container">
-  <%= @inventory.name %><br><br>
-  <%# <% if can? :destroy, @post %> %>
-    <%= button_to "Delete Post", inventory_path(@inventory.id), method: :delete %>
-  <%# <% end %> %>
-</div>
+<%= @inventory.name %><br><br>
+<%= link_to 'Add Food', new_food_path, data: {turbo: false} %>
+
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Actions</th>
+  </tr>
+  <% @inventory.inventory_food.each do |item| %>
+    <tr>
+      <td><%= item.food.name %></td>
+      <td><%= item.quantity %><%= item.food.measurement_unit %></td>
+      <td><%= button_to 'Remove', inventory_path(item.id), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
 
 
