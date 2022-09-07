@@ -11,7 +11,7 @@ class Ability
     #   return unless user.admin?
     #   can :manage, :all
     #
-        
+      can :create, Food
       can :delete, Recipe, user: user
       can :delete, Food, user: user
       can :read, Food, user: user
