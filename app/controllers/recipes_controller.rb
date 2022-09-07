@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @recipes = Recipe.where(User.all)
+    @recipes = Recipe.where(user: current_user)
   end
 
   def show
