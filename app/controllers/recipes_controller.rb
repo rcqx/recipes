@@ -9,7 +9,11 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    if current_user
+      @recipes = Recipe.where(user_id: current_user.id)
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def show; end
