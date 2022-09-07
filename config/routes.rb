@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Defines the root path route ("/")
-  root to: 'home#index'
+  root to: 'home#public_recipes'
   get 'public_recipes', to: 'home#public_recipes'
 
   devise_for :users
