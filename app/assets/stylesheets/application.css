@@ -74,6 +74,17 @@ td {
   width: 15vw;
 }
 
+td, button {
+  margin-right: 0.5em;
+}
+
+#td-btns {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  width: 92%;
+}
+
 .title {
   display: flex;
   justify-content: space-between;

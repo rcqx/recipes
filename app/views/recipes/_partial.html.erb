@@ -8,9 +8,9 @@
 
     <% @recipe.recipe_foods.each do |item| %>
     <tr>
-      <td align="center"><h5><%= item.food.name %></h5></td>
-      <td align="center"><h5><%= item.quantity %></h5></td>
-      <td align="center"><h5><%= item.quantity * item.food.price %></h5></td>
+      <td align="center"><p><%= item.food.name %></p></td>
+      <td align="center"><p><%= item.quantity %> <%= item.food.measurement_unit %></p></td>
+      <td align="center"><p><%= item.quantity * item.food.price %></p></td>
       <td id="td-btns" align="center">
         <button>MODIFY</button>
         <%= button_to 'Remove', "/recipes/:recipe_id/recipe_food/#{item.id}", method: :delete %>
