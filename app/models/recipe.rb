@@ -25,4 +25,3 @@ class Recipe < ApplicationRecord
     hash
   end
 end
-
