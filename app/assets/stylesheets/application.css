@@ -8,6 +8,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: roboto;
+}
+
+a {
+  text-decoration: none;
+  color: #007fff
 }
 
 button {
@@ -16,6 +22,7 @@ button {
   border-style: none;
   color: white;
   border-radius: 0.25em;
+  cursor: pointer;
 }
 
 .recipe-card {
@@ -32,4 +39,37 @@ button {
 
 .recipe-card > div {
   width: 40%;
+}
+
+.recipe-details {
+  border: 2px solid #007fff;
+  border-radius: 0.25em;
+  padding: 3em;
+  margin: 1em;
+  text-align: left;
+  width: 50vw;
+  height: 70vh;
+  display: flex;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonsCont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-list {
+  border-radius: 0.25em;
+  display: flex;
+  border: 2px solid black;
+  height: 250px;
+  margin-top: 1.5em;
+}
+
+td {
+  border: 1px solid black;
+  border-radius: 0.25em;
+  width: 15vw;
 }

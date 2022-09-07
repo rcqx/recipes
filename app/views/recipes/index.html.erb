@@ -1,12 +1,18 @@
 <% @recipes.each do |item|  %>
   <div class="recipe-card">
     <div class="title">
-      <h2><%= item.name%> by <%= item.user.name %></h2>
+      <%= link_to recipe_path(item.id) do %>
+        <h2><%= item.name%> by <%= item.user.name %></h2>
+      <% end %>
+
       <%= button_to 'REMOVE', recipe_path(item.id), method: :delete, data: {turbo: false} %>      
     </div>
     <div class="description">
       <h4>Description:</h4>
-      <p><%= item.description %></p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tristique ante. 
+        Nunc ut tempus turpis. Sed euismod pretium turpis, eu porta odio imperdiet.
+      </p>
     </div>
   </div>
 <% end %>
