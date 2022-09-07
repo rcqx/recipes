@@ -1,36 +1,33 @@
 class FoodsController < ApplicationController
-  # before_action :authenticate_user!
-  include ApplicationHelper
-
-  def index
-    @foods = Food.all
-  end
-
-  def new
-    # render :new
-    @food = Food.new
-  end
+  before_action :authenticate_user!
+  load_and_authorize_resource
 
   def create
-    new_food = Food.new(food_params)
-    new_food.user = current_user
-    if new_food.save
-      flash[:success] = 'You successfully added a food item'
-      redirect_to foods_path
+    if @food.save
+      flash[:notice] = 'Food saved successfully'
     else
-      flash.now[:error] = 'Error: You could not add a food item'
-      render :new
+      flash[:alert] = 'Food not saved'
     end
+    redirect_to foods_path
   end
 
   def destroy
-    @food = Food.find(params[:id]).destroy
+    @food.destroy
+    flash.now[:notice] = 'Food was deleted!'
     redirect_to foods_path
+  rescue ActiveRecord::InvalidForeignKey
+    flash.now[:alert] = 'Food cannot be deleted!'
+    redirect_to foods_path
+  end
+
+  def index
+    @foods = Food.where(user: current_user)
   end
 
   private
 
   def food_params
-    params.require(:add_food).permit(:name, :measurement_unit, :price, :quantity)
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
+      .merge({ user_id: current_user.id })
   end
 end
