@@ -1,5 +1,5 @@
 <%= @inventory.name %><br><br>
-<%= link_to 'Add Food', new_food_path, data: {turbo: false} %>
+<%= link_to 'Add Food', new_inventory_inventory_food_path(@inventory.id), data: {turbo: false} %>
 
 <table>
   <tr>
@@ -15,5 +15,3 @@
     </tr>
   <% end %>
 </table>
-
-
