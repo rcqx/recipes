@@ -9,24 +9,20 @@ class RecipesController < ApplicationController
   end
 
   def index
-    if current_user
-      @recipes = Recipe.where(user_id: current_user.id)
-    else
-      @recipes = Recipe.all
-    end
+    @recipes = if current_user
+                 Recipe.where(user_id: current_user.id)
+               else
+                 Recipe.all
+               end
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-  end 
+  end
 
   def update
     @recipe = Recipe.find(params[:id])
-    if @recipe.public == false
-      @recipe.public = true
-    else
-      @recipe.public = false
-    end
+    @recipe.public = @recipe.public == false
     @recipe.save
   end
 end
