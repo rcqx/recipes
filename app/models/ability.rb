@@ -10,5 +10,6 @@ class Ability
     can :read, Recipe, user: user
     can :delete, Inventory, user: user
     can :read, Inventory, user:
+    
   end
 end
