@@ -27,6 +27,7 @@ class RecipeFoodController < ApplicationController
     @recipe_food = RecipeFood.find(params[:recipe_id])
     @recipe_food.quantity = params[:quantity]
     @recipe_food.save
+    redirect_to recipe_path
   end
 
   def destroy

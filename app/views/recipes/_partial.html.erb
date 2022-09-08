@@ -12,7 +12,7 @@
       <td align="center"><p><%= item.quantity %> <%= item.food.measurement_unit %></p></td>
       <td align="center"><p><%= item.quantity * item.food.price %></p></td>
       <td id="td-btns" align="center">
-        <%= button_to 'Modify', recipe_recipe_food_path(item.id), method: :get %>
+        <%= button_to 'Modify', recipe_recipe_food_path(item.id), method: :get, data: {turbo: false} %>
         <%= button_to 'Remove', "/recipes/:recipe_id/recipe_food/#{item.id}", method: :delete %>
       </td>
     <tr>
