@@ -8,7 +8,7 @@ class Ability
     can :delete, Food, user: user
     can :read, Food, user: user
     can :read, Recipe, user: user
-    can :delete, Inventory, user:
+    can :delete, Inventory, user: user
     can :read, Inventory, user:
   end
 end
