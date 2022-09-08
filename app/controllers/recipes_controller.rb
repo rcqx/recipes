@@ -18,7 +18,6 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    
   end 
 
   def update
@@ -29,6 +28,5 @@ class RecipesController < ApplicationController
       @recipe.public = false
     end
     @recipe.save
-    # redirect_to recipe_path
   end
 end

@@ -1,0 +1,11 @@
+<h1>Update ingredient quantity</h1>
+  <table>
+    <%= form_with url: recipe_recipe_food_path(recipe_id: @recipe_food.id), method: :put, local: true do |form| %>
+      <tr>
+        <td align="center"><p><%= @recipe_food.food.name %></p></td>
+        <td align="center"><p>Current quantity: <%= @recipe_food.quantity %> <%= @recipe_food.food.measurement_unit %></p></td>
+        <td align="center"><%= form.number_field :quantity, size: "80x6", placeholder: "Enter new quantity" %></td>
+        <td align="center"><%= form.submit "Update food quantity" %></td>
+      <tr>
+    <% end %>
+  </table>

@@ -1,6 +1,5 @@
 class RecipeFoodController < ApplicationController
   def index
-    @recipe_food = RecipeFood.find(params[:recipe_id]);
     @recipe = Recipe.find(params[:recipe_id])
     @foods = Food.all
   end
@@ -18,6 +17,16 @@ class RecipeFoodController < ApplicationController
       flash[:error] = '...with problems, try again...'
       render :new
     end
+  end
+
+  def show
+    @recipe_food = RecipeFood.find(params[:recipe_id])
+  end
+
+  def update
+    @recipe_food = RecipeFood.find(params[:recipe_id])
+    @recipe_food.quantity = params[:quantity]
+    @recipe_food.save
   end
 
   def destroy
