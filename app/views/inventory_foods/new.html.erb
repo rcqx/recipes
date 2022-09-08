@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Measurement Unit</th>
+    <th>Unit Price</th>
+    <th>Quantity</th>
+    <th>Actions</th>
+  </tr>
+  
+  <% @foods.each do |food| %>
+    <%= form_with url: inventory_inventory_foods_path(food_id: food.id), method: :post, local: true do |form| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td><%= food.price %></td>
+        <td><%= form.number_field :quantity, size: "80x6" %></td>
+        <td><%= form.submit "Add" %></td>
+      </tr>
+    <%end%>
+  <% end %>
+</table>
