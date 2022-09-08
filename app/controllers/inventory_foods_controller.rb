@@ -21,5 +21,8 @@ class InventoryFoodsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    InventoryFood.find(params[:id]).destroy
+    redirect_to inventory_path
+  end
 end
