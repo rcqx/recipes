@@ -1,6 +1,17 @@
 <% @inventories.each do |inventory| %>
-  <%= link_to inventory_path(inventory.id) do %>
-    <%= inventory.name %><br><br>
-  <% end %>
+  <% if can? :read, inventory %>
+    <div class="recipe-card">
+      <div class="title">
+        <%= link_to inventory_path(inventory.id) do %>
+          <h2><%= inventory.name %></h2>
+        <% end %>
+        <% if can? :read, inventory %>
+          <%= button_to "Delete Inventory", inventory_path(inventory.id), method: :delete, data: {turbo: false} %>
+        <%end%>
+      </div>
+      <div class="description">
+        <%# <p><%= inventory.description %></p> %>
+      </div>
+    </div>
+  <%end%>
 <%end%>
-
