@@ -3,14 +3,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: roboto, 'Courier New', Courier, monospace;
+}
+
+a {
+  text-decoration: none;
+  color: #007fff;
 }
 
 button {
-  padding: 0.5em;
+  padding: 1em;
   background-color: #007fff;
   border-style: none;
   color: white;
   border-radius: 0.25em;
+  cursor: pointer;
 }
 
 .recipe-card {
@@ -27,4 +34,84 @@ button {
 
 .recipe-card > div {
   width: 40%;
+}
+
+.recipe-details {
+  border: 2px solid #007fff;
+  border-radius: 0.25em;
+  padding: 3em;
+  margin: 1em;
+  text-align: left;
+  width: 50vw;
+  height: 70vh;
+  display: flex;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+}
+
+.buttonsCont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-list {
+  border-radius: 0.25em;
+  display: flex;
+  border: 2px solid #007fff;
+  height: 300px;
+  margin-top: 1.5em;
+}
+
+td {
+  border: 1px solid #007fff;
+  border-radius: 0.25em;
+  width: 15vw;
+}
+
+td,
+button {
+  margin-right: 0.5em;
+}
+
+#td-btns {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  width: 92%;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toogle {
+  display: flex;
+  margin-top: 2em;
+  height: 2.5em;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0.25em;
+}
+
+.public-btn:hover {
+  background-color: blue;
+}
+
+.public-btn:active {
+  background-color: red;
+}
+
+.recipe-add-food {
+  border: 2px solid #007fff;
+  border-radius: 0.25em;
+  padding: 3em;
+  margin: 1em;
+  text-align: left;
+  width: 50vw;
+  display: flex;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
 }
