@@ -14,7 +14,7 @@
     </div>
     <div class="buttonsCont">
       <button>Generate Shopping List</button>
-      <button>Add ingredient</button>
+      <%= button_to 'Add ingredient', recipe_recipe_food_index_path(@recipe.id), method: :get, class: 'public-btn' %> 
     </div>
 
     <%= render "partial" %>

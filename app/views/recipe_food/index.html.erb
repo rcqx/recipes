@@ -1,20 +1,22 @@
-<table class="recipe-list">
- <tr>
-      <td align="center">Food</td>
-      <td align="center">Quantity</td>
-      <td align="center">Value</td>
-      <td align="center">Actions</td>
-    </tr> 
+<h1>Add a new ingredient</h1>
+<table class="recipe-add-food">
+  <tr>
+    <td align="center">Food</td>
+    <td align="center">Measurement Unit</td>
+    <td align="center">Unit Price</td>
+    <td align="center">Quantity</td>
+    <td align="center">Actions</td>
+  </tr> 
 
-    <% @recipe.recipe_foods.each do |item| %>
-    <tr>
-      <td align="center"><h5><%= item.food.name %></h5></td>
-      <td align="center"><h5><%= item.quantity %></h5></td>
-      <td align="center"><h5><%= item.quantity * item.food.price %></h5></td>
-      <td id="td-btns" align="center">
-        <button>MODIFY</button>
-        <%= button_to 'Remove', "/recipes/:recipe_id/recipe_food/#{item.id}", method: :delete %>
-      </td>
-    <tr>
-    <% end %>  
+  <% @foods.each do |item| %>
+    <%= form_with url: recipe_recipe_food_index_path(food_id: item.id), method: :post, local: true do |form| %>
+      <tr>
+        <td align="center"><p><%= item.name %></p></td>
+        <td align="center"><p><%= item.measurement_unit %></p></td>
+        <td align="center"><p><%= item.price %></p></td>
+        <td><%= form.number_field :quantity, size: "80x6" %></td>
+        <td><%= form.submit "Add food" %></td>
+      <tr>
+    <% end %>
+  <% end %>  
 </table>
