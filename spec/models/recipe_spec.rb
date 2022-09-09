@@ -4,7 +4,7 @@ describe Recipe, type: :model do
   subject do
     user = User.new(name: 'Fatima', email: 'fatimaazahir@gmail.com', password: '123456')
     recipe = user.recipes.new(
-      user: user,
+      user:,
       name: 'Pizza', preparation_time: 25,
       cooking_time: 120, description: 'Classic Hawaiian Pizza!'
     )
