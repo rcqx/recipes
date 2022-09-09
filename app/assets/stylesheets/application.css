@@ -4,7 +4,8 @@ nav {
   box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.1);
 }
 
-nav, ul {
+nav,
+ul {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
@@ -15,6 +16,14 @@ li {
   padding: 0.5em;
   font-size: large;
   font-weight: bold;
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+li:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 body {
@@ -161,16 +170,5 @@ button {
 .recipe-container:hover,
 .recipe-card:hover {
   transform: scale(1.025);
-  cursor: pointer;
-}
-
-li {
-    transition-property: transform;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in;
-}
-
-li:hover {
-  transform: scale(1.05);
   cursor: pointer;
 }
