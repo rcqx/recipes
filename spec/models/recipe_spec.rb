@@ -6,8 +6,7 @@ describe Recipe, type: :model do
     recipe = user.recipes.new(
       user: user,
       name: 'Pizza', preparation_time: 25,
-      cooking_time: 120, description: 'Classic Hawaiian Pizza!',
-      is_public: false
+      cooking_time: 120, description: 'Classic Hawaiian Pizza!'
     )
     recipe
   end

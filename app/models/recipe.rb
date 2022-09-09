@@ -6,4 +6,6 @@ class Recipe < ApplicationRecord
   validates :name, presence: true, length: { maximum: 250 }
   validates :description, presence: true, length: { maximum: 1000 }
   validates :is_public, presence: true, inclusion: [true, false]
+  validates :preparation_time, presence: true
+  validates :cooking_time, presence: true
 end
