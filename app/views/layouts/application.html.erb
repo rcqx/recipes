@@ -13,22 +13,24 @@
   <body>
     <nav>
       <ul>
-        <li>Sign in</li>
-        <li>Food List</li>
-        <li>My recipes</li>
-        <li>My inventory</li>
+        <li>
+        <% if !current_user%>
+          <%= button_to "Sign in", new_user_session_path, method: :get, data:{turbo:false} %>
+        <% end %>
+        </li>
+        <li><%= link_to "Food list", foods_path, method: :get, data:{turbo:false} %></li>
+        <li><%= link_to "Public Recipes", public_recipes_path, method: :get, data:{turbo:false} %></li>
+        <li><%= link_to "My recipes", recipes_path, method: :get, data:{turbo:false} %></li>
+        <li><%= link_to "My inventories", inventories_path, method: :get, data:{turbo:false} %></li>
+        <li>
+          <% if current_user%>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, data:{turbo:false} %>
+          <% end %>
+        </li>
       <ul>
     </nav>
-    <% if current_user%>
-    <%= button_to "Sign out", destroy_user_session_path, method: :delete, data:{turbo:false} %>
-    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    
-    
-    <footer>
-        <p>Cuisine App, 2022. All rights reserved.</p>
-    </footer>
   </body>
 </html>

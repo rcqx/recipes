@@ -1,6 +1,7 @@
 nav {
-  border: 2px solid black;
   width: 100vw;
+  border-bottom: 1px solid whitesmoke;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.1);
 }
 
 nav, ul {
@@ -12,6 +13,8 @@ nav, ul {
 
 li {
   padding: 0.5em;
+  font-size: large;
+  font-weight: bold;
 }
 
 body {
@@ -46,6 +49,13 @@ button {
   display: flex;
   justify-content: space-evenly;
   box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .recipe-card > div {
@@ -82,6 +92,8 @@ td {
   border: 1px solid #007fff;
   border-radius: 0.25em;
   width: 15vw;
+  text-align: center;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.1);
 }
 
 td,
@@ -96,7 +108,7 @@ button {
   width: 92%;
 }
 
-.title {
+.title2 {
   display: flex;
   justify-content: space-between;
 }
@@ -130,4 +142,35 @@ button {
   display: flex;
   box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
   flex-direction: column;
+}
+
+.recipe-container {
+  border: 2px solid #007fff;
+  border-radius: 1.5em;
+  padding: 1.5em;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-container,
+.recipe-card {
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+.recipe-container:hover,
+.recipe-card:hover {
+  transform: scale(1.025);
+  cursor: pointer;
+}
+
+li {
+    transition-property: transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+}
+
+li:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }

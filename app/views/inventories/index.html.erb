@@ -1,3 +1,11 @@
+<% if !current_user %>
+  <h2>Please sign in to access your inventories</h2>
+<% end %>
+
+<% if current_user && @inventories.length == 0 %>
+  <h2>There are not stored inventories in this account</h2>
+<% end %>
+
 <% @inventories.each do |inventory| %>
   <% if can? :read, inventory %>
     <div class="recipe-card">
