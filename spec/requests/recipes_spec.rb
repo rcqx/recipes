@@ -8,7 +8,7 @@ describe 'Testing Recipes pages', type: :request do
 #     user.password_confirmation = 'password'
 #     user.confirm
 #     user
-#   end
+#   end new
 
   context 'with valid parameters' do
     let(:user) do
