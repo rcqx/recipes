@@ -1,3 +1,19 @@
+nav {
+  border: 2px solid black;
+  width: 100vw;
+}
+
+nav, ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li {
+  padding: 0.5em;
+}
+
 body {
   display: flex;
   flex-direction: column;
