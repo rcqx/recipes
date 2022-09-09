@@ -59,21 +59,10 @@ group :development, :test do
 
   # Rspec
   gem 'rspec-rails'
-
-  # https://github.com/thoughtbot/factory_bot/tree/master
-  gem 'factory_bot_rails'
-
-  # https://github.com/flyerhzm/bullet
-  gem 'bullet'
-
-  # https://github.com/teamcapybara/capybara
-  gem 'capybara'
-
-  # https://github.com/titusfortner/webdrivers
-  gem 'webdrivers', '~> 5.0'
 end
 
 group :development do
+  gem 'mailcatcher'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
@@ -82,13 +71,12 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-
-  # https://github.com/ryanb/letter_opener
-  gem 'letter_opener'
 end
 
 group :test do
-  # Code coverage
-  # https://github.com/colszowka/simplecov
-  gem 'simplecov', require: false
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
+  gem 'rails-controller-testing'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
