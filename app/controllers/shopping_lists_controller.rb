@@ -1,7 +1,9 @@
 class ShoppingListsController < ApplicationController
   def index
-    @stock = InventoryFood.includes(:food).where(inventory: Inventory.where(user: current_user))
-    @ingredients = RecipeFood.includes(:food).where(recipe: Recipe.where(user: current_user))
+    @inventory = Inventory.find(params[:inventory_id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @stock = @inventory.inventory_food
+    @ingredients = @recipe.recipe_foods
   end
 
   def new
