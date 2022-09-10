@@ -1,4 +1,4 @@
-# Weblog: API endpoints 🕸️🕸️
+# Recipes App 
 
 >  A ruby on rails app that keeps track of all your recipes, ingredients, and inventory. Allows to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
 
