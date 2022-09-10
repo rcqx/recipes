@@ -7,7 +7,7 @@
     <th>Quantity</th>
     <th>Actions</th>
   </tr>
-  <% @inventory.inventory_food.each do |item| %>
+  <% @inventory.inventory_food.includes([:food]).each do |item| %>
     <tr>
       <td><%= item.food.name %></td>
       <td><%= item.quantity %><%= item.food.measurement_unit %></td>

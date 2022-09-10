@@ -1,7 +1,7 @@
 <% if !current_user %>
   <h2>Please sign in to access your recipes</h2>
 <% else %>
-  <% @recipes.each do |item|  %>
+  <% @recipes.includes([:user]).each do |item|  %>
     <%= link_to recipe_path(item.id) do %>
     <div class="recipe-card">
       <div class="title">
