@@ -1,0 +1,21 @@
+<h2>Shopping List</h2>
+<% @total_price = 0 %>
+
+
+<div>
+<% @missing_foods.each do |food| %>
+  <% inventory_food = InventoryFood.where(food_id: food.id).sum(:quantity) %>
+    <% recipe_food = RecipeFood.where(food_id: food.id).sum(:quantity) %>
+  <div class="food">
+<h2><%= food.name.capitalize %></h2>
+<% missing_quantity = recipe_food - inventory_food %>
+<h4>missing quantity: <%=  missing_quantity %>
+ <%= food.measurement_unit %></h4>
+ <% missing_price = food.price *  missing_quantity %>
+ <% @total_price += missing_price %>
+<h4>Price: <%= missing_price %> $</h4>
+</div>
+<% end %>
+</div>
+<section class="total"><h3>Amount of food to buy: <%= @missing_foods.length %></h3>
+<h3>Total value of food needed: <%= @total_price %></h3></section>
