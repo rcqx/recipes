@@ -11,7 +11,24 @@
   </head>
 
   <body>
-    <%= button_to "Sign out", destroy_user_session_path, method: :delete, data:{turbo:false} %>
+    <nav>
+      <ul>
+        <li>
+        <% if !current_user%>
+          <%= button_to "Sign in", new_user_session_path, method: :get, data:{turbo:false} %>
+        <% end %>
+        </li>
+        <li><%= link_to "Food list", foods_path, method: :get, data:{turbo:false} %></li>
+        <li><%= link_to "Public Recipes", public_recipes_path, method: :get, data:{turbo:false} %></li>
+        <li><%= link_to "My recipes", recipes_path, method: :get, data:{turbo:false} %></li>
+        <li><%= link_to "My inventories", inventories_path, method: :get, data:{turbo:false} %></li>
+        <li>
+          <% if current_user%>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, data:{turbo:false} %>
+          <% end %>
+        </li>
+      <ul>
+    </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
