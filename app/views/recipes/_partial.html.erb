@@ -6,7 +6,7 @@
       <td align="center">Actions</td>
     </tr> 
 
-    <% @recipe.recipe_foods.each do |item| %>
+    <% @recipe.recipe_foods.includes([:food]).each do |item| %>
     <tr>
       <td align="center"><p><%= item.food.name %></p></td>
       <td align="center"><p><%= item.quantity %> <%= item.food.measurement_unit %></p></td>

@@ -2,24 +2,28 @@
   <h2>Please sign in to access your inventories</h2>
 <% end %>
 
-<% if current_user && @inventories.length == 0 %>
+<% if current_user && current_user.inventories.length == 0 %>
   <h2>There are not stored inventories in this account</h2>
 <% end %>
 
 <% @inventories.each do |inventory| %>
   <% if can? :read, inventory %>
+    <%= link_to inventory_path(inventory.id) do %>
     <div class="recipe-card">
       <div class="title">
-        <%= link_to inventory_path(inventory.id) do %>
           <h2><%= inventory.name %></h2>
-        <% end %>
         <% if can? :read, inventory %>
           <%= button_to "Delete Inventory", inventory_path(inventory.id), method: :delete, data: {turbo: false} %>
         <%end%>
       </div>
       <div class="description">
-        <%# <p><%= inventory.description %></p> %>
+      <h4>Description:</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tristique ante. 
+          Nunc ut tempus turpis. Sed euismod pretium turpis, eu porta odio imperdiet.
+        </p>
       </div>
     </div>
+    <% end %>
   <%end%>
 <%end%>
