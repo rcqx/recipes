@@ -1,35 +1,36 @@
 require 'rails_helper'
 
-describe Recipe, type: :model do
+RSpec.describe Recipe, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
   subject do
-    user = User.new(name: 'Fatima', email: 'fatimaazahir@gmail.com', password: '123456')
-    recipe = user.recipes.new(
-      user:,
-      name: 'Pizza', preparation_time: 25,
-      cooking_time: 120, description: 'Classic Hawaiian Pizza!'
-    )
-    recipe
+    Recipe.new(name: 'Steak', preparation_time: 1.5, cooking_time: 2, description: 'a deep grilled steak', public: true,
+               user_id: 1)
   end
 
-  describe 'validation tests' do
-    it 'tests a recipe is invalid without a name' do
-      expect(subject).to be_valid
-      subject.name = ''
-      expect(subject).to_not be_valid
-      subject.name = nil
-      expect(subject).to_not be_valid
-    end
+  before { subject.save }
 
-    it 'tests a recipe name is less than 250 character' do
-      expect(subject).to be_valid
-      subject.name = 'a' * 251
-      expect(subject).to_not be_valid
-    end
+  it 'name should be present' do
+    subject.name = nil
+    expect(subject).to_not be_valid
+  end
 
-    it 'test validation for description' do
-      expect(subject).to be_valid
-      subject.description = 'a' * 1001
-      expect(subject).to be_invalid
-    end
+  it 'description should be present' do
+    subject.description = nil
+    expect(subject).to_not be_valid
+  end
+
+  it 'user_id must be a float greater or equal than zero' do
+    subject.user_id = nil
+    expect(subject).to_not be_valid
+  end
+
+  it 'Cooking_time must be a float greater or equal than zero' do
+    subject.cooking_time = nil
+    expect(subject).to_not be_valid
+  end
+
+  it 'Preparation_time must be a float greater or equal than zero' do
+    subject.preparation_time = nil
+    expect(subject).to_not be_valid
   end
 end

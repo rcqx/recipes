@@ -1,50 +1,28 @@
 require 'rails_helper'
 
-describe Food, type: :model do
-  before(:each) do
-    @user = User.create!(name: 'Fatima', email: 'fatimaazahir@gmail.com', password: '123456')
-    @food = @user.foods.create(name: 'Akara', price: 200, measurement_unit: 'kg', quantity: 10)
+RSpec.describe Food, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
+  subject { Food.new(name: 'oranges', price: 1.5, measurement_unit: 'Kg', user_id: 1) }
+
+  before { subject.save }
+
+  it 'name should be present' do
+    subject.name = nil
+    expect(subject).to_not be_valid
   end
 
-  it 'Food should be valid' do
-    expect(@food).to be_valid
+  it 'measurement_unit should be present' do
+    subject.measurement_unit = nil
+    expect(subject).to_not be_valid
   end
 
-  it 'Food should not be valid without a name' do
-    @food.name = nil
-    expect(@food).to_not be_valid
-    @food.name = ''
-    expect(@food).to_not be_valid
+  it 'user_id must be a float greater or equal than zero' do
+    subject.user_id = nil
+    expect(subject).to_not be_valid
   end
 
-  it 'Food should not be valid if name is too long' do
-    @food.name = 'g' * 251
-    expect(@food).to_not be_valid
-  end
-
-  it 'Food should not be valid without a measurement unit' do
-    @food.measurement_unit = nil
-    expect(@food).to_not be_valid
-  end
-
-  it 'Food should not be valid if wrong measurement unit is passed' do
-    @food.measurement_unit = 15
-    expect(@food).to_not be_valid
-    @food.name = true
-    expect(@food).to_not be_valid
-    @food.name = 'gl'
-    expect(@food).to_not be_valid
-  end
-
-  it 'Food should not be valid if price is negative' do
-    @food.price = - 15
-    expect(@food).to_not be_valid
-  end
-
-  it 'Food should not be valid if price is not a number' do
-    @food.price = 'fifteen'
-    expect(@food).to_not be_valid
-    @food.price = true
-    expect(@food).to_not be_valid
+  it 'Price must be a float greater or equal than zero' do
+    subject.price = nil
+    expect(subject).to_not be_valid
   end
 end
