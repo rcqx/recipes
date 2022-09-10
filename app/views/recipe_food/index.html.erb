@@ -1,0 +1,22 @@
+<h1>Add a new ingredient</h1>
+<table class="recipe-add-food">
+  <tr>
+    <td align="center">Food</td>
+    <td align="center">Measurement Unit</td>
+    <td align="center">Unit Price</td>
+    <td align="center">Quantity</td>
+    <td align="center">Actions</td>
+  </tr> 
+
+  <% @foods.each do |item| %>
+    <%= form_with url: recipe_recipe_food_index_path(food_id: item.id), method: :post, local: true, data: {turbo: false} do |form| %>
+      <tr>
+        <td align="center"><p><%= item.name %></p></td>
+        <td align="center"><p><%= item.measurement_unit %></p></td>
+        <td align="center"><p><%= item.price %></p></td>
+        <td align="center"><%= form.number_field :quantity, size: "80x6" %></td>
+        <td align="center"><%= form.submit "Add food" %></td>
+      <tr>
+    <% end %>
+  <% end %>  
+</table>

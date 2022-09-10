@@ -1,0 +1,8 @@
+<h1>Generating Shopping List</h1>
+
+<p>Chose an inventory to use</p>
+
+<%= form_with url: recipe_shopping_lists_path, method: :post, local: true do |form| %>
+  <%= form.collection_select :inventory_id, @inventories, :id, :name, include_blank: true %>
+  <%= form.submit "Generate" %>
+<%end%>

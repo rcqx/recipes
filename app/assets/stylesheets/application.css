@@ -1,15 +1,167 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+nav {
+  width: 100vw;
+  border-bottom: 1px solid whitesmoke;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.1);
+}
+
+nav,
+ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li {
+  padding: 0.5em;
+  font-size: large;
+  font-weight: bold;
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+li:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: roboto, 'Courier New', Courier, monospace;
+}
+
+a {
+  text-decoration: none;
+  color: #007fff;
+}
+
+button {
+  padding: 1em;
+  background-color: #007fff;
+  border-style: none;
+  color: white;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.recipe-card {
+  border: 2px solid #007fff;
+  border-radius: 1.5em;
+  padding: 1.5em;
+  margin: 1em;
+  text-align: center;
+  width: 60vw;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.recipe-card > div {
+  width: 40%;
+}
+
+.recipe-details {
+  border: 2px solid #007fff;
+  border-radius: 0.25em;
+  padding: 3em;
+  margin: 1em;
+  text-align: left;
+  width: 50vw;
+  height: 70vh;
+  display: flex;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+}
+
+.buttonsCont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-list {
+  border-radius: 0.25em;
+  display: flex;
+  border: 2px solid #007fff;
+  height: 300px;
+  margin-top: 1.5em;
+}
+
+td {
+  border: 1px solid #007fff;
+  border-radius: 0.25em;
+  width: 15vw;
+  text-align: center;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.1);
+}
+
+td,
+button {
+  margin-right: 0.5em;
+}
+
+#td-btns {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  width: 92%;
+}
+
+.title2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toogle {
+  display: flex;
+  margin-top: 2em;
+  height: 2.5em;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0.25em;
+}
+
+.public-btn:hover {
+  background-color: blue;
+}
+
+.public-btn:active {
+  background-color: red;
+}
+
+.recipe-add-food {
+  border: 2px solid #007fff;
+  border-radius: 0.25em;
+  padding: 3em;
+  margin: 1em;
+  text-align: left;
+  width: 50vw;
+  display: flex;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+}
+
+.recipe-container {
+  border: 2px solid #007fff;
+  border-radius: 1.5em;
+  padding: 1.5em;
+  margin: 1em;
+  text-align: center;
+  width: 60vw;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}

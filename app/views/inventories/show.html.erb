@@ -1,0 +1,17 @@
+<%= @inventory.name %><br><br>
+<%= link_to 'Add Food', new_inventory_inventory_food_path(@inventory.id), data: {turbo: false} %>
+
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Actions</th>
+  </tr>
+  <% @inventory.inventory_food.includes([:food]).each do |item| %>
+    <tr>
+      <td><%= item.food.name %></td>
+      <td><%= item.quantity %><%= item.food.measurement_unit %></td>
+      <td><%= button_to 'Remove', inventory_inventory_food_path(@inventory.id, item.id), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,31 @@
+<div class="title padding">
+  <div>
+    <p>Amount of food to buy: <%= amount_of_ingredients(@ingredients, @stock) %></p>
+    <p>Total value of food needed: <%= total_price(@ingredients, @stock) %></p>
+  </div>
+
+  <div>
+    <p>Recipe: <%= @recipe.name %></p>
+    <p>Inventory: <%= @inventory.name %></p>
+  </div>
+</div>
+
+<table class="recipe-list">
+  <tr>
+    <td align="center">Food</td>
+    <td align="center">Quantity</td>
+    <td align="center">Value</td>
+  </tr> 
+
+
+  <% @stock.zip(@ingredients).each do |stock, food| %>
+    <% if ingredient(food, stock) %>
+      <tr>
+        <td align="center"><p><%= ingredient(food, stock)[:name] %></p></td>
+        <td align="center"><p><%= ingredient(food, stock)[:quantity] %></p></td>
+        <td align="center"><p><%= ingredient(food, stock)[:price] %></p></td>
+      <tr>
+    <%end%>
+  <% end %>
+
+</table>

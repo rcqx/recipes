@@ -1,0 +1,22 @@
+  <div class="recipe-details">
+    <div class="title2">
+      <div>
+        <h1><%= @recipe.name%></h1>
+        <h3>Preparation time: <%= @recipe.preparation_time %></h3>
+        <h3>Cooking time: <%= @recipe.cooking_time %></h3>
+        <h3>Description:<br>
+          <h5><%= @recipe.description %></h5>
+        </h3>
+      </div>
+      <div class="toogle">
+      <%= button_to 'Public?', recipe_path, method: :put, class: 'public-btn', data: {turbo: false} %> 
+      </div>
+    </div>
+    <div class="buttonsCont">
+      <%= button_to 'Generate Shopping List', new_recipe_shopping_list_path(@recipe), method: :get, class: 'public-btn', data: {turbo: false} %>
+      <%= button_to 'Add ingredient', recipe_recipe_food_index_path(@recipe), method: :get, class: 'public-btn', data: {turbo: false} %> 
+    </div>
+
+    <%= render "partial" %>
+
+  </div>
