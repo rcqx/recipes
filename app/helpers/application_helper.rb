@@ -1,6 +1,7 @@
 module ApplicationHelper
   def ingredient(recipe_food, inventory_food)
-    quantity = recipe_food.quantity - inventory_food.quantity
+    inventory_quantity = inventory_food.quantity || 0
+    quantity = recipe_food.quantity - inventory_quantity
     return if quantity.negative? || quantity.zero?
 
     { name: recipe_food.food.name, quantity:, price: quantity * recipe_food.food.price }
