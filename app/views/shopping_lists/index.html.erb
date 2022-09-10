@@ -6,6 +6,11 @@
     <td align="center">Value</td>
   </tr> 
 
-  <%= @inventory.id  %>
-  <%= @recipe.id  %>
+  <% @ingredients.zip(@stock).each do |(ingre, stock)| %>
+    <tr>
+      <td align="center"><p><%= ingredient(ingre, stock) %></p></td>
+  
+    <tr>
+  <% end %>
+
 </table>
