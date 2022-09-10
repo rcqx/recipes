@@ -1,11 +1,10 @@
 class Recipe < ApplicationRecord
-  belongs_to :user
-  has_many :recipe_foods, dependent: :destroy
-  has_many :foods, through: :recipe_foods
+  has_many :recipe_foods, foreign_key: 'recipe_id'
+  belongs_to :user, class_name: 'User'
 
-  validates :name, presence: true, length: { maximum: 250 }
-  validates :description, presence: true, length: { maximum: 1000 }
-  validates :is_public, presence: true, inclusion: [true, false]
-  validates :preparation_time, presence: true
-  validates :cooking_time, presence: true
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :preparation_time, numericality: { greater_than_or_equal_to: 0 }
+  validates :cooking_time, numericality: { greater_than_or_equal_to: 0 }
+  validates :user_id, presence: true
 end
