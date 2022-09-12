@@ -2,6 +2,8 @@
 
 >  A ruby on rails app that keeps track of all your recipes, ingredients, and inventory. Allows to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
 
+![image](https://user-images.githubusercontent.com/58822719/189556869-da2bf3d1-3cee-4152-ab39-f93f85a1bc3f.png)
+
 ## Getting Started
 
 This repository includes files with Ruby that can be used to test the created main classes from the app
