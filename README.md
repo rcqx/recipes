@@ -4,6 +4,8 @@
 
 ![image](https://user-images.githubusercontent.com/58822719/189556869-da2bf3d1-3cee-4152-ab39-f93f85a1bc3f.png)
 
+Check website [here](https://kitchenaid.herokuapp.com/)
+
 ## Getting Started
 
 This repository includes files with Ruby that can be used to test the created main classes from the app
